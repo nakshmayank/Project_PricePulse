@@ -14,7 +14,7 @@ const app = express();
 
 connectDB();
 
-app.use(cors({ origin: process.env.CLIENT_URL || "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: process.env.CLIENT_URL || "project-price-pulse-frontend.vercel.app", credentials: true }));
 app.use(urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.json());
