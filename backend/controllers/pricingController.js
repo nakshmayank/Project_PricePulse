@@ -39,8 +39,10 @@ export const getRecommendedPrice = async (req, res) => {
     try {
       const priceHistory = history.map(h => h.price);
 
+      https://project-pricepulse.onrender.com
+
       if (priceHistory.length >= 1) {
-        const mlResponse = await axios.post('http://localhost:5001/predict', {
+        const mlResponse = await axios.post('https://project-pricepulse.onrender.com/predict', {
           priceHistory,
           competitorPrices: competitor.map(c => c.price)
         });
