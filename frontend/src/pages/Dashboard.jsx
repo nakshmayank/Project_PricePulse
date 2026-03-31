@@ -14,7 +14,7 @@ export default function Dashboard() {
     setGreeting(`// ${timeGreeting}, ${name} — System active.`);
 
     // Fetch live product count for real metrics
-    fetch('http://localhost:5000/api/products')
+    fetch(`${import.meta.env.VITE_Backend_URL}/api/products`)
       .then(res => res.json())
       .then(data => {
         const uniqueCats = [...new Set(data.map(p => p.category))].length;

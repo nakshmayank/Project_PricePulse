@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const API = 'http://localhost:5000/api';
+const API = `${import.meta.env.VITE_Backend_URL}/api`;
 
 export default function Login() {
   const navigate = useNavigate();

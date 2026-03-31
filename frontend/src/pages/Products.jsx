@@ -12,7 +12,7 @@ export default function Products() {
 
   const fetchProducts = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/products');
+      const res = await fetch(`${import.meta.env.VITE_Backend_URL}/api/products`);
       const data = await res.json();
       setProducts(data);
     } catch (err) {
@@ -28,7 +28,7 @@ export default function Products() {
     e.preventDefault();
     const endpoint = formData.type === 'history' ? '/api/products/history' : '/api/products/competitor';
     try {
-      const res = await fetch(`http://localhost:5000${endpoint}`, {
+      const res = await fetch(`${import.meta.env.VITE_Backend_URL}${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

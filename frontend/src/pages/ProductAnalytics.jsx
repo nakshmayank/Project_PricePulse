@@ -14,13 +14,13 @@ export default function ProductAnalytics() {
       // 1. Fetch AI Recommendation
 
       const recRes = await fetch(
-        `http://localhost:5000/api/recommend/${productId}`,
+        `${import.meta.env.VITE_Backend_URL}/api/recommend/${productId}`,
       );
       const recData = await recRes.json();
       setRecommendation(recData);
 
       // 2. Fetch Product Context
-      const prodRes = await fetch(`http://localhost:5000/api/products`);
+      const prodRes = await fetch(`${import.meta.env.VITE_Backend_URL}/api/products`);
       const allProds = await prodRes.json();
       setProduct(allProds.find((p) => p._id === productId));
     } catch (err) {
